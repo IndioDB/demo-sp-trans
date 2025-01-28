@@ -25,5 +25,5 @@ jobs:
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
         run: |
           gcloud auth configure-docker us-central1-docker.pkg.dev
-          docker build -t us-central1-docker.pkg.dev/lunar-solution-387513/sp-trans/etl-static-sp-trans:latest .
-          docker push us-central1-docker.pkg.dev/github-actions-demonstration/demo/etl-static-sp-trans:latest
+          docker build -t us-central1-docker.pkg.dev/$GOOGLE_PROJECT/sp-trans/etl-static-sp-trans:latest .
+          docker push us-central1-docker.pkg.dev/$GOOGLE_PROJECT/demo/etl-static-sp-trans:latest
