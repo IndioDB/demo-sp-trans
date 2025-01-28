@@ -12,15 +12,15 @@ ENV role="ACCOUNTADMIN"
 ENV warehouse="COMPUTE_WH"
 ENV database="SP_TRANS"
 ENV schema="STATIC"
-ENV GOOGLE_APPLICATION_CREDENTIALS='/app/credentials.json'
+ENV GOOGLE_APPLICATION_CREDENTIALS="${GOOGLE_APPLICATION_CREDENTIALS}"
 
 # Copia os arquivos do projeto
 COPY requirements.txt /app/requirements.txt
-COPY credentials.json /app/credentials.json
 COPY src/ /app/
 
 # Instala dependências
 RUN pip install --no-cache-dir -r /app/requirements.txt
+RUN echo "$GOOGLE_APPLICATION_CREDENTIALS" > /app/credentials.json
 
 # Comando padrão do container
 CMD ["python", "/app/main.py"]
