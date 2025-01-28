@@ -1,0 +1,6 @@
+pandas==2.2.3
+protobuf==5.29.3
+python-dotenv==1.0.1
+fsspec
+gcsfs
+snowflake-connector-python[pandas]
